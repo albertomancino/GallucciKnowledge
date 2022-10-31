@@ -1,0 +1,18 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 10,
+        "rel_threshold": 3
+    },
+    {
+        "meta": {
+            "verbose": true,
+            "save_recs": true
+        },
+        "recommender": "Random_seed_42",
+        "configuration": {
+            "seed": 42,
+            "name": "Random_seed_42"
+        }
+    }
+]
