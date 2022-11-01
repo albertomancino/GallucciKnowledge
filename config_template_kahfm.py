@@ -30,7 +30,7 @@ TEMPLATE = """experiment:
         validation_rate: 5
         verbose: True
         save_weights: True
-        save_recs: True
+        save_recs: False
         validation_metric: nDCGRendle2020@10
       epochs: 100
       batch_size: 512

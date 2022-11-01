@@ -27,7 +27,7 @@ TEMPLATE = """experiment:
       meta:
         verbose: True
         validation_rate: 5
-        save_recs: True
+        save_recs: False
         verbose: True
         validation_metric: nDCGRendle2020@10
       lr: 0.01
