@@ -1,9 +1,9 @@
 experiment:
   version: 0.3.1
-  dataset: sub-movielens1m-gallucci
+  dataset: subdatasets_0
   data_config:
     strategy: dataset
-    dataset_path: ../data/sub-movielens1m-gallucci/0/dataset_filtered_ordered_g0.tsv
+    dataset_path: /Users/albertomancino/PycharmProjects/GallucciKnowledge/data/sub-movielens1m-gallucci/0/dataset_filtered_ordered_g0.tsv
     dataloader: KGFlexLoader
     side_information:
       work_directory: ../data/sub-movielens1m-gallucci
@@ -18,25 +18,11 @@ experiment:
   top_k: 10
   evaluation:
     cutoffs: [10, 5, 1]
-    simple_metrics: [nDCGRendle2020, HR]
+    simple_metrics: [nDCGRendle2020, HR, ItemCoverage, UserCoverage]
     relevance_threshold: 3
   gpu: 0
   external_models_path: ../external/models/__init__.py
   models:
-    KaHFMEmbeddings:
-      meta:
-        hyper_max_evals: 10
-        hyper_opt_alg: tpe
-        validation_rate: 5
-        verbose: True
-        save_weights: True
-        save_recs: True
-        validation_metric: nDCGRendle2020@10
-      epochs: 100
-      batch_size: 512
-      lr: [loguniform, -10, -1]
-      l_w: [0.001, 0.003, 0.01]
-      l_b: 0
     external.KGFlex:
       meta:
         verbose: True
@@ -45,7 +31,7 @@ experiment:
         verbose: True
         validation_metric: nDCGRendle2020@10
       lr: 0.01
-      epochs: 100
+      epochs: 5
       q: 0.1
       embedding: [5, 10]
       parallel_ufm: 4

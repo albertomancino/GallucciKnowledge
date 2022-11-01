@@ -1,9 +1,9 @@
 TEMPLATE = """experiment:
   version: 0.3.1
-  dataset: sub-movielens1m-gallucci
+  dataset: subdatasets_{sub}
   data_config:
     strategy: dataset
-    dataset_path: ../data/{dataset}/{sub}/dataset_filtered_ordered_g{sub}.tsv
+    dataset_path: {path}
     dataloader: KGFlexLoader
     side_information:
       work_directory: ../data/{dataset}
@@ -18,7 +18,7 @@ TEMPLATE = """experiment:
   top_k: 10
   evaluation:
     cutoffs: [10, 5, 1]
-    simple_metrics: [nDCGRendle2020, HR]
+    simple_metrics: [nDCGRendle2020, HR, ItemCoverage, UserCoverage]
     relevance_threshold: 3
   gpu: 0
   external_models_path: ../external/models/__init__.py
