@@ -1,7 +1,6 @@
 import config_template_kgflex
 from elliot.run import run_experiment
 import config_template_kahfm
-
 import os
 import argparse
 import pandas as pd
@@ -26,7 +25,7 @@ start = args.start
 end = args.end
 model: str = args.model.lower()
 
-assert model in templates, 'model name not found. Accepted: kahfm and kgflex'
+assert model in templates, f'model name not found. Accepted: {templates.keys()}'
 
 template = templates[model]
 

@@ -29,8 +29,8 @@ TEMPLATE = """experiment:
         hyper_opt_alg: tpe
         validation_rate: 5
         verbose: True
-        save_weights: True
-        save_recs: False
+        save_weights: False
+        save_recs: True
         validation_metric: nDCGRendle2020@10
       epochs: 100
       batch_size: 512
