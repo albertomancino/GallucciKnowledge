@@ -8,7 +8,7 @@ TEMPLATE = """experiment:
     side_information:
       work_directory: ../data/{dataset}
       map: ../data/{dataset}/mapping.tsv
-      features: ../data/{dataset}/item_features.tsv
+      features: ../data/{dataset}/{sub}/new_item_features.tsv
       predicates: ../data/{dataset}/predicate_mapping.tsv
   splitting:
     test_splitting:
