@@ -41,6 +41,7 @@ class Evaluator(object):
         :param data: dataset object
         :param k: top-k evaluation
         """
+
         self.logger = logging.get_logger(self.__class__.__name__, pylog.CRITICAL if data.config.config_test else
                                          pylog.DEBUG)
         self._data = data

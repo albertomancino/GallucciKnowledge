@@ -1,12 +1,14 @@
 import config_template_kgflex
 from elliot.run import run_experiment
 import config_template_kahfm
+import config_template_kahfm_features
 import os
 import argparse
 import pandas as pd
 
 templates = {'kahfm': config_template_kahfm.TEMPLATE,
-             'kgflex': config_template_kgflex.TEMPLATE}
+             'kgflex': config_template_kgflex.TEMPLATE,
+             'kahfm_features': config_template_kahfm_features.TEMPLATE}
 
 config_dir = 'config_files/'
 RANDOM_SEED = 42

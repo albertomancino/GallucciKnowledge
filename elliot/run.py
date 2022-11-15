@@ -51,8 +51,8 @@ def run_experiment(config_path: str = './config/config.yml'):
             else:
                 model_class = getattr(importlib.import_module("elliot.recommender"), key)
 
-
             model_placeholder = ho.ModelCoordinator(data_test, base.base_namespace, model_base, model_class)
+
             if isinstance(model_base, tuple):
                 logger.info(f"Tuning begun for {model_class.__name__}\n")
                 trials = Trials()

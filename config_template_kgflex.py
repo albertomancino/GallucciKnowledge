@@ -8,7 +8,7 @@ TEMPLATE = """experiment:
     side_information:
       work_directory: ../data/{dataset}
       map: ../data/{dataset}/mapping.tsv
-      features: ../data/{dataset}/item_features.tsv
+      features: ../data/{dataset}/{sub}/new_item_features.tsv
       predicates: ../data/{dataset}/predicate_mapping.tsv
   splitting:
     test_splitting:
@@ -32,13 +32,13 @@ TEMPLATE = """experiment:
         verbose: True
         validation_metric: nDCGRendle2020@10
       lr: 0.01
-      epochs: 5
+      epochs: 100
       q: 0.1
       embedding: [5, 10]
       parallel_ufm: 4
       first_order_limit: [200, 400]
       second_order_limit: [400]
-      npr: [1, 2, 20]
+      npr: [1, 2, 5]
       seed: 64
       criterion: infogain
       batch_size: 1024
